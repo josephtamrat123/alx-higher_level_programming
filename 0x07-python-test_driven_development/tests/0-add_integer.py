@@ -1,23 +1,15 @@
 #!/usr/bin/python3
-"""
-Module add-integer
-add two integers
-"""
+add_integer = __import__('../0-add_integer').add_integer
 
-
-def add_integer(a, b=98):
-    """ This function return the sum of intgers
-    or the int cast of floats
-    """
-
-    if type(a) != int and type(a) != float:
-        raise TypeError("a must be an integer")
-    if type(b) != int and type(b) != float:
-        raise TypeError("b must be an integer")
-
-    if type(a) == float:
-        a = int(a)
-    if type(b) == float:
-        b = int(b)
-
-    return a + b
+print(add_integer(1, 2))
+print(add_integer(100, -2))
+print(add_integer(2))
+print(add_integer(100.3, -2))
+try:
+    print(add_integer(4, "School"))
+except Exception as e:
+    print(e)
+try:
+    print(add_integer(None))
+except Exception as e:
+    print(e)
