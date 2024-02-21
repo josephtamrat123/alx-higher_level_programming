@@ -1,21 +1,22 @@
-#!/usr/bin/python3
-"""
-Module print_square
-print_square
+"
+This module defines `print_square`
+The function prints a square
 """
 
 
 def print_square(size):
+    """prints a square with size, `size`
+    Args:
+        size (int)
+    Raises:
+        TypeError: size must be an integer
+        ValueError: size must be >= 0
     """
-    Print a square
-    """
+
     if type(size) != int:
         raise TypeError('size must be an integer')
-    if size < 0:
-        raise ValueError('size must be a non-negative integer')
-    if size == 0:
-        return
-    for i in range(size):
-        for j in range(size):
-            print("#", end="")
-        print()
+    elif size < 0:
+        raise ValueError('size must be >= 0')
+
+    for x in range(size):
+        print('#' * size)
